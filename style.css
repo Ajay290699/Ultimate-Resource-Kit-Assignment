@@ -1,0 +1,21 @@
+.bd{
+    border: 1px solid black;
+    height: 100vh;
+}
+
+.logo{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+button{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border: none;
+}
+button .colour{
+    color: #c5c2c2;
+    display: block;
+}
