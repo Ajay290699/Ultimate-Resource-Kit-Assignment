@@ -4,119 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <title>Stacked Bar Chart with Multiple Datasets</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container-fluid bd">
         <div class="row bd">
             <!-- side nav icon -->
-            <div class="col-1 bd">
+            <div class="col-1">
                 <img src="./assets/Butterfly.png" alt="#" class="logo"> <br>
+
                 <button><i class="fa fa-search colour"></i></button>
-                <button><i class="fa fa-house colour"></i></button>
+                <button style="background-color: blue;color: white; border-radius: 5px; margin-top: 30px;"><i class="fa fa-ligth fa-house"></i></button>
                 <button><i class="fa-solid fa-rectangle-list colour"></i></button>
                 <button><i class="fa fa-list colour"></i></button>
                 <button><i class="fa fa-user colour"></i></button>
-                <button><i class="fa-sharp fa-regular fa-bell colour"></i></button>
+                <button style="margin-top: 310px;"><i class="fa-sharp fa-regular fa-bell colour"></i></button>
                 <button><i class="fa fa-sign-out colour"></i></button>
             </div>
             <!-- hii mike profile section -->
-            <div class="col-3 bd profile">
+            <div class="col-lg-3 co-md-6 col-sm-12 profile">
                 <div class="pcontent">
-                    <div>
-                        <img src="./assets/ajay.jpg" alt="#" style="height: 80px; width: 80px; border-radius: 50%;  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
-                    </div>
-                    <div style="margin-left: 15px; margin-top: 10px;">
-                        <h4>Hii Ajay,</h4>welcome back.
-                    </div>
+                  <div>
+                    <img src="./assets/ajay.jpg" alt="#" style="height: 80px; width: 80px; border-radius: 50%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
+                  </div>
+                  <div style="margin-left: 15px; margin-top: 7px;">
+                    <h4>Hii Ajay,</h4>welcome back.
+                  </div>
                 </div><br>
+                <div style="margin-left: 30px;">
                 <div>
-                    <h5>Today</h5>
-                    <h1>$19,892</h1>Account balance
-                    <h5>$4,000</h5>Year-to-Date Contributions
-                    <h5>$1,892</h5>Total Interest
-                   </div>
-                   <button id="select" style="width: 150px; height: 40px; border-radius: 9px;">
-                    <select id="select">
-                        <option value="I Want to">I Want to  </option>
-                       </select>
-                   </button>
-                   <h5>Recent Transactions</h5><br>2020-08-07
-                   <h6>Withdrawal Transfer to Bank-XXX11</h6>
-                   <hr>
-                   2020-07-21
-                   <h6>Withdrawal Transfer to Bank-XXX11</h6>
-                   <hr>
-                   2020-07-16
-                   <h6>Withdrawal Transfer to Bank-XXX11</h6>
-                   <hr>
+                  <h5>Today</h5>
+                  <span style="font-size: 25px; color: black;"><b>$19,892</b></span>
+                  <div class="color">Account balance</div><br>
+                  <div class="black">$4,000</div>                  
+                  <div class="color">Year-to-Date Contributions</div><br>
+                  <div class="black">$1,892</div>
+                  <div class="color">Total Interest</div>
+                </div>
+                <br>
+                <button id="select" style="width: 150px; height: 40px; border-radius: 9px;">
+                  <select id="select">
+                    <option value="I Want to">I Want to</option>
+                  </select>
+                </button>
+                <br><br>
+                <h5>Recent Transactions</h5><br>
+                <div class="color">2020-08-07</div>
+                <h6>Withdrawal Transfer to Bank-XXX11</h6>
+                <hr class="hr">
+                <div class="color">2020-07-21</div>
+                <h6>Withdrawal Transfer to Bank-XXX11</h6>
+                <hr class="hr">
+                <div class="color">2020-07-16</div>                
+                <h6>Withdrawal Transfer to Bank-XXX11</h6>
+                <hr class="hr">
+              </div>
             </div>
+              
             <!-- chart section -->
-            <div class="col-5 bd">
-                <h6>Retirement Income</h6>
-                <h4>Starting Year 2056</h4>
+            <div class="col-lg-5 col-md-9 col-sm-12">
+                <div style="margin-left: 30px;margin-top: 40px;">
+                <h6 style="color: blue;">Retirement Income</h6>
+                <h5>Starting Year 2056</h5>
 
                 <div class="middle">
                     <div>
-                        <h4>$300,000</h4>
-                        My Goal
-                        <hr>
+                        <h4><b>$300,000</b></h4>
+                        <span class="color">My Goal</span>
+                        <hr class="hrc">
                     </div>
 
                     <div>
-                        <h4>59%</h4>
-                        Goal Achieved
-                        <hr>
+                        <h4><b>59%</b></h4>
+                        <span class="color">Goal Achieved</span>
+                        <hr class="hrc">
                     </div>
 
                     <div>
-                        <h4>$300</h4>
-                        Est. Monthly Income
-                        <hr>
+                        <h4><b>$300</b></h4>
+                        <span class="color">Est. Monthly Income</span>
+                        <hr class="hrc">
                     </div>
                 </div>
 
                 <h5>Contributions Overtime</h5>
 
-                <div class="middle" style="font-size: x-small;">
+                <!-- <div class="middle" style="font-size: x-small;">
                     <div>
-                        <span style="background-color: blue; color: blue; padding-left: 15px; border-radius: 5px;">.</span>
-                        Employeer : <span>K 73,500</span>
+                        <span style="background-color: rgb(36,21,246); color: rgb(36,21,246); padding-left: 15px; border-radius: 5px;">.</span>
+                        Employeer : <span><b>K 73,500</b></span>
                     </div>
                     <div>
-                        <span style="background-color: rgb(57, 123, 216); color: blue; padding-left: 15px; border-radius: 5px;">.</span>
-                        Employee : <span>K 52,500</span>
+                        <span style="background-color: rgb(107,56,247); color: rgb(107,56,247); padding-left: 15px; border-radius: 5px;">.</span>
+                        Employee : <span><b>K 52,500</b></span>
                     </div>
                     <div>
-                        <span style="background-color: rgb(16, 161, 117); color: blue; padding-left: 15px; border-radius: 5px;">.</span>
-                        Employeer : <span>K 244,313</span>
+                        <span style="background-color: rgb(111,172,203); color: rgb(111,172,203); padding-left: 15px; border-radius: 5px;">.</span>
+                        Total Interest : <span><b>K 244,313</b></span>
                     </div>
-                </div>
+                </div> -->
 
-                <div style="max-width: 500px; max-height: 800px;">
+                <div style="max-width: 600px; max-height: 800px;">
                     <canvas id="myChart"></canvas>
                 </div>
 
-                <h3>How do I compare to my peers?</h3>These numbers represent current gaol achievement
+                <br>
+
+                <h4>How do I compare to my peers?</h4>
+                <span class="color">These numbers represent current gaol achievement</span><br>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-lg-4 col-sm-12">
                         <div>
                             <label>Age: </label>
                             <select>
                                 <option value="Under 30">Under 30</option>
                             </select>
-                            <hr>
+                            <hr class="hrw">
                         </div>
                         <div>
                             <label>Salary: </label>
                             <select>
                                 <option value="K 20 - K 30">K 20 - K 30</option>
                             </select>
-                            <hr>
+                            <hr class="hrw">
                         </div>
                         <div>
                             <label>Gender: </label>
@@ -125,15 +142,10 @@
                                 <option value="Female">Female</option>
                                 <option value="Transgender">Transgender</option>
                             </select>
-                            <hr>
+                            <hr class="hrw">
                         </div>
                     </div>
-                    <div class="col-8" id="progress">
-
-                        <!-- <div class="progress">
-                            <div class="progress-in" style="width: 64%;"></div>
-                            <div class="skill-percent">64%</div>
-                        </div> -->
+                    <div class="col-lg-8 col-sm-12" id="progress">
 
                         <div>
                             <div class="progress-bar">78%</div>
@@ -153,12 +165,15 @@
                     </div>
                 </div>
             </div>
+            </div>
+
+
             <!-- retirement section -->
-            <div class="col-3 bd">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="retier">
-                    <h4>Retirement Strategy</h4>
-                    <br>
-                    <h5>Employee Contribution</h5>
+                    <div style="font-size: 20px;"><b>Retirement Strategy</b></div>  
+                    <br>                  
+                    <div style="font-size: 10px; font-weight: 600;">Employee Contribution</div>
                     <div class="row">
                         <div class="col-9">
                             <input type="range" min="1" max="100" value="50" style="width: 250px;">
@@ -166,9 +181,8 @@
                         <div class="col-3 center">
                             <div style="width:40px;height:30px;background-color:white;text-align: center;">12%</div>
                         </div>
-                    </div>
-                    <br>
-                    <h5>Retirement Age</h5>
+                    </div>                    
+                    <div style="font-size: 10px; font-weight: 600;">Retirement Age</div>
                     <div class="row">
                         <div class="col-9">
                             <input type="range" min="1" max="100" value="50" style="width: 250px;">
@@ -176,13 +190,11 @@
                         <div class="col-3 center">
                             <div style="width:40px;height:30px;background-color:white;text-align: center;">65</div>
                         </div>
-                    </div>
-                     
-                    <hr>
-                    
+                    </div>                     
+                    <hr class="hrw">                    
                     <div class="row">
                         <div class="col-9">
-                            <h6>Employeer Contribution</h6> 
+                            <div style="font-size: 15px;"><b>Employeer Contribution</b></div> 
                         </div>
                         <div class="col-3 center">
                             <span>8.4%</span>
@@ -190,7 +202,7 @@
                     </div> 
                     <div class="row">
                         <div class="col-9">
-                            <h6>Interest Rate</h6> 
+                            <div style="font-size: 15px;"><b>Interest Rate</b></div> 
                         </div>
                         <div class="col-3 center">
                             <span>5%</span>
@@ -203,70 +215,72 @@
                 </div>
                 
 
-                <div class="foot">
-                   
+                <div class="foot">                   
                         <div style="height: 130px; width: 2px; background-color: black;"></div>
                         <div style="margin-left: 20px;">
                             <span>Are you considering a<br><b>Housing Advance?</b></span>
-                            <h6>Limited time reduced interest.</h6>
-                            <br>
-                            <h5>Learn More <i class="fa-solid fa-angle-right"></i></h5> 
-                        </div>
-                    
+                            <h6 class="color">Limited time reduced interest.</h6>                            
+                            <h5 class="color">Learn More <i class="fa-solid fa-angle-right"></i></h5> 
+                        </div>                
                 </div>
             </div>
 
         </div>
     </div>
 
-    <script>
-        // Sample data for three datasets
-        const employer = [90,40,30,40,50,45,89];
-        const employee = [40,60,50,80,110,48,47];
-        const totalInterest = [70,45,48,45,89,75,23];
+     <script>
+    // Sample data for three datasets
+    const labels = ['20','', '25','', '30','', '35','', '40','', '60','', '65'];
+    const employer = [20,20,25,30,35,40,45,50,55,65,70,80,100];
+    const employee = [20,25,30,40,45,50,60,70,80,90,100,110,120];
+    const totalInterest = [30,40,50,60,70,80,90,100,110,120,130,140,150];
 
-        // Bar Chart Configuration
-        const data = {
-            labels: ['20','25','30','35','40','60','65'],
-            datasets: [
-                {
-                    label: "Employer",
-                    data: employer,
-                    backgroundColor: 'red'
-                },
-                {
-                    label: "Employee",
-                    data: employee,
-                    backgroundColor: 'blue'
-                },
-                {
-                    label: "Total Interest",
-                    data: totalInterest,
-                    backgroundColor: 'green'
-                },
-            ]
-        };
+    // Calculate cumulative data for stacked chart
+    const cumulativeEmployer = employer.map((value, index) => value);
+    const cumulativeEmployee = employee.map((value, index) => value + employer[index]);
+    const cumulativeTotalInterest = totalInterest.map((value, index) => value + employee[index]);
 
-        const config = {
-            type: 'bar',
-            data: data,
-            options: {
-                responsive: true,
-                scales: {
-                 x: {
-                    stacked: true // If you want the bars to be stacked
-                    },
-                 y: {
-                    stacked: true // If you want the bars to be stacked
-                    }
-                 }
-            }
-          };
+    // Bar Chart Configuration
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: "Employer: K 73,300",
+          data: cumulativeEmployer,
+          backgroundColor: 'rgb(36,21,246)'
+        },
+        {
+          label: "Employee: K 52,500",
+          data: cumulativeEmployee,
+          backgroundColor: 'rgb(107,56,247)'
+        },
+        {
+          label: "Total Interest: K 244,313",
+          data: cumulativeTotalInterest,
+          backgroundColor: 'rgb(111,172,203)'
+        },
+      ]
+    };
 
-          // Create and render the chart
-        const ctx = document.getElementById('myChart').getContext('2d');
-        new Chart(ctx, config);
-        
-    </script>
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            stacked: true, // Set to 'true' for a stacked bar chart
+          },
+          y: {
+            stacked: true // Set to 'true' for a stacked bar chart
+          }
+        }
+      }
+    };
+
+    // Create and render the chart
+    const ctx = document.getElementById('myChart').getContext('2d');
+    new Chart(ctx, config);
+  </script>
 </body>
 </html>

@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bar Chart with Three Datasets</title>
+  <title>Stacked Bar Chart with Multiple Datasets</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <div style="width: 80%; margin: 20px auto;">
-    <canvas id="barChart"></canvas>
+  
+  <div>
+    <canvas id="myChart"></canvas>
   </div>
 
   <script>
     // Sample data for three datasets
-    const dataset1 = [10, 20, 30, 40, 50];
-    const dataset2 = [15, 25, 35, 45, 55];
-    const dataset3 = [5, 15, 25, 35, 45];
+    const labels = ['20','', '25','', '30','', '35','', '40','', '60','', '65'];
+    const employer = [20,20,25,30,35,40,45,50,55,65,70,80,100];
+    const employee = [20,25,30,40,45,50,60,70,80,90,100,110,120];
+    const totalInterest = [30,40,50,60,70,80,90,100,110,120,130,140,150];
 
-    // Bar chart configuration
+    // Calculate cumulative data for stacked chart
+    const cumulativeEmployer = employer.map((value, index) => value);
+    const cumulativeEmployee = employee.map((value, index) => value + employer[index]);
+    const cumulativeTotalInterest = totalInterest.map((value, index) => value + employee[index]);
+
+    // Bar Chart Configuration
     const data = {
-      labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5'],
+      labels: labels,
       datasets: [
         {
-          label: 'Dataset 1',
-          data: dataset1,
-          backgroundColor: 'rgba(255, 99, 132, 0.5)',
-          borderColor: 'rgba(255, 99, 132, 1)',
-          borderWidth: 1
+          label: "Employer",
+          data: cumulativeEmployer,
+          backgroundColor: 'rgb(36,21,246)'
         },
         {
-          label: 'Dataset 2',
-          data: dataset2,
-          backgroundColor: 'rgba(54, 162, 235, 0.5)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          borderWidth: 1
+          label: "Employee",
+          data: cumulativeEmployee,
+          backgroundColor: 'rgb(107,56,247)'
         },
         {
-          label: 'Dataset 3',
-          data: dataset3,
-          backgroundColor: 'rgba(75, 192, 192, 0.5)',
-          borderColor: 'rgba(75, 192, 192, 1)',
-          borderWidth: 1
-        }
+          label: "Total Interest",
+          data: cumulativeTotalInterest,
+          backgroundColor: 'rgb(111,172,203)'
+        },
       ]
     };
 
@@ -50,18 +51,19 @@
         responsive: true,
         scales: {
           x: {
-            stacked: true // If you want the bars to be stacked
+            stacked: true // Set to 'true' for a stacked bar chart
           },
           y: {
-            stacked: true // If you want the bars to be stacked
+            stacked: true // Set to 'true' for a stacked bar chart
           }
         }
       }
     };
 
     // Create and render the chart
-    const ctx = document.getElementById('barChart').getContext('2d');
+    const ctx = document.getElementById('myChart').getContext('2d');
     new Chart(ctx, config);
   </script>
+
 </body>
 </html>
