@@ -7,6 +7,8 @@
     height: 35px;
     width: 35px;
     border-radius: 50%;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 button{
@@ -18,4 +20,38 @@ button{
 button .colour{
     color: #c5c2c2;
     display: block;
+}
+.pcontent{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+.profile{
+    background-color: #fbf9f9;
+}
+#select{
+    background-color: blue;
+    color: white;
+}
+select{
+    border: none;
+    border-radius: 15px;
+}
+.retier{
+    margin-top: 80px;
+    border-radius: 12px;
+    background-color: #fbf9f9;
+    padding: 35px;
+}
+.retierbtn{
+    width: 280px;
+    background-color: blue;
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    border-radius: 10px;
+}
+.foot{
+    margin-top: 50px;
+    display: flex;
 }
