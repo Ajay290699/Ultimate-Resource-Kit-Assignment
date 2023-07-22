@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bar Chart with Three Datasets</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div style="width: 80%; margin: 20px auto;">
+    <canvas id="barChart"></canvas>
+  </div>
+
+  <script>
+    // Sample data for three datasets
+    const dataset1 = [10, 20, 30, 40, 50];
+    const dataset2 = [15, 25, 35, 45, 55];
+    const dataset3 = [5, 15, 25, 35, 45];
+
+    // Bar chart configuration
+    const data = {
+      labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5'],
+      datasets: [
+        {
+          label: 'Dataset 1',
+          data: dataset1,
+          backgroundColor: 'rgba(255, 99, 132, 0.5)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 1
+        },
+        {
+          label: 'Dataset 2',
+          data: dataset2,
+          backgroundColor: 'rgba(54, 162, 235, 0.5)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1
+        },
+        {
+          label: 'Dataset 3',
+          data: dataset3,
+          backgroundColor: 'rgba(75, 192, 192, 0.5)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }
+      ]
+    };
+
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            stacked: true // If you want the bars to be stacked
+          },
+          y: {
+            stacked: true // If you want the bars to be stacked
+          }
+        }
+      }
+    };
+
+    // Create and render the chart
+    const ctx = document.getElementById('barChart').getContext('2d');
+    new Chart(ctx, config);
+  </script>
+</body>
+</html>
